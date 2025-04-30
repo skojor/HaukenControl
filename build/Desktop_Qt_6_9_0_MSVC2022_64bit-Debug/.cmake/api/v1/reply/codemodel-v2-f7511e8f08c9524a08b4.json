@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-3f5dea3fb5a61a3b5053.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "HaukenControl",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "HaukenControl::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-HaukenControl-Debug-a8a91da3761441953e70.json",
+					"name" : "HaukenControl",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "HaukenControl_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-HaukenControl_autogen-Debug-35d971f6678c42b78923.json",
+					"name" : "HaukenControl_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "HaukenControl_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-HaukenControl_autogen_timestamp_deps-Debug-c296ac3a23b2d9998a25.json",
+					"name" : "HaukenControl_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Kode/kode/kode/kode/kode/HaukenControl/build/Desktop_Qt_6_9_0_MSVC2022_64bit-Debug",
+		"source" : "C:/Kode/kode/kode/kode/kode/HaukenControl"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
