@@ -7,36 +7,12 @@ MainWindow::MainWindow(QWidget *parent)
                                  + "/haukenremote.ini",
                              QSettings::IniFormat);
 
-    setCentralWidget(centralWidget);
-
-    gridLayout->addLayout(vlStnName, 0, 0);
-    gridLayout->addLayout(glParams, 0, 1);
-    gridLayout->addLayout(glBtns, 1, 0);
-    gridLayout->addWidget(teInfoBox, 1, 1);
-    vlStnName->addWidget(tblStations);
-
-    glBtns->addWidget(btnSelAll, 0, 0);
-    glBtns->addWidget(btnSelNone, 0, 1);
-    glBtns->addWidget(btnUpdateList, 1, 0, 1, 2);
-    glBtns->addWidget(btnActivateChanges, 2, 0, 1, 2);
-    glBtns->addWidget(btnCancelOperation, 3, 0, 1, 2);
-
-    btnSelAll->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    btnSelNone->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    btnUpdateList->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    btnActivateChanges->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    btnCancelOperation->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-
-    centralWidget->setLayout(gridLayout);
-    centralWidget->show();
-    updParams();
+    setupWindow();
     setupSignals();
+    updParams();
     createCmdTable();
-    centralWidget->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
-    this->resize(800, 600);
 
     tmUpdRecordTime->start(1000);
-    this->setStatusBar(statusBar);
 }
 
 MainWindow::~MainWindow()
@@ -234,6 +210,36 @@ QString MainWindow::convertSecsToHourMinSecs(int secs)
 void MainWindow::updStatusBar(QString s)
 {
     statusBar->showMessage(s);
+}
+
+void MainWindow::setupWindow()
+{
+    setCentralWidget(centralWidget);
+
+    gridLayout->addLayout(vlStnName, 0, 0);
+    gridLayout->addLayout(glParams, 0, 1);
+    gridLayout->addLayout(glBtns, 1, 0);
+    gridLayout->addWidget(teInfoBox, 1, 1);
+    vlStnName->addWidget(tblStations);
+
+    glBtns->addWidget(btnSelAll, 0, 0);
+    glBtns->addWidget(btnSelNone, 0, 1);
+    glBtns->addWidget(btnUpdateList, 1, 0, 1, 2);
+    glBtns->addWidget(btnActivateChanges, 2, 0, 1, 2);
+    glBtns->addWidget(btnCancelOperation, 3, 0, 1, 2);
+
+    btnSelAll->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    btnSelNone->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    btnUpdateList->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    btnActivateChanges->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    btnCancelOperation->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+
+    centralWidget->setLayout(gridLayout);
+    centralWidget->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
+    this->resize(800, 600);
+    this->setStatusBar(statusBar);
+
+    centralWidget->show();
 }
 
 void MainWindow::setupSignals()

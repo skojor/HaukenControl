@@ -53,6 +53,7 @@ public:
 public slots:
 
 private slots:
+    void setupWindow();
     void setupSignals();
     void updateStationTable(QStringList stns, QStringList ips, QStringList types);
     void createCmdTable();
